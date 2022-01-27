@@ -19,7 +19,7 @@ class app{
             this.player.Hx = e.clientX;
             this.player.Hy = e.clientY;
         })
-        document.body.addEventListener('touchmove', (e) => {
+        this.canvas.addEventListener('touchmove', (e) => {
             this.player.Hx = e.clientX;
             this.player.Hy = e.clientY;
         })
