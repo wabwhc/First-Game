@@ -20,8 +20,8 @@ class app{
             this.player.Hy = e.clientY;
         })
         document.body.addEventListener('touchmove', (e) => {
-            this.player.Hx = e.clientX;
-            this.player.Hy = e.clientY;
+            this.player.Hx = e.pageX;
+            this.player.Hy = e.pageY;
         })
         this.monDirX;
         this.monDirY;
