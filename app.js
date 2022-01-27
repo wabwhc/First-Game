@@ -19,10 +19,12 @@ class app{
             this.player.Hx = e.clientX;
             this.player.Hy = e.clientY;
         })
-        this.canvas.addEventListener('touchmove', (e) => {
-            this.player.Hx = e.clientX;
-            this.player.Hy = e.clientY;
-        })
+        
+        document.body.addEventListener('touchmove', (e) => {
+            this.player.Hx = e.changedTouches[0].clientX;
+            this.player.Hy = e.changedTouches[0].clientY;
+        });
+        
         this.monDirX;
         this.monDirY;
         this.draw();
