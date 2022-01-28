@@ -15,6 +15,7 @@ class app{
         this.player = new player(this.width, this.height, this.ctx);
         this.mons[0] = new monster(this.width, this.height, this.ctx);
         this.turn = 0;
+        this.score = 0;
         document.body.addEventListener('mousemove', (e) => {
             this.player.Hx = e.clientX;
             this.player.Hy = e.clientY;
@@ -63,6 +64,8 @@ class app{
         for(let i = 0; i <= this.moncount; i++){
             this.mons[i].draw(this.monDirX, this.monDirY);
         }
+        this.ctx.font = '40px serif';
+        this.ctx.fillText(this.score, this.width / 2, this.height - 40);
     }
 
     crash(){
@@ -79,6 +82,7 @@ class app{
                 if(this.distance <= 30 && this.mons[j].Mlive === true && this.player.mines[i].MineLive === true){
                     this.mons[j].Mlive = false;
                     this.player.mines[i].MineLive = false;
+                    this.score += 10;
                 }
             }
         }

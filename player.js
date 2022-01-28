@@ -25,11 +25,10 @@ export default class player{
         this.ctx.fillStyle = 'black';
         this.ctx.closePath();
         this.ctx.font = '20px serif';
-        this.ctx.fillText(this.Hlife, this.Hx - 15, this.Hy + 5);
         for(let i = 0; i < this.mines.length; i++){
             this.mines[i].draw();
         }
-        
+        this.ctx.fillText(this.Hlife, this.Hx - 15, this.Hy + 5);
     }
 
     mine(){
